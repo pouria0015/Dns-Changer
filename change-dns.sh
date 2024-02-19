@@ -19,9 +19,9 @@ num=$(getMenuNum)
 if [[ $num -eq 1 ]];then
   viewMyDns
 elif [[ $num -eq 2 ]]; then
-  DnsDatabase
-elif [[ $num -eq 3 ]]; then
   dns_changer
+elif [[ $num -eq 3 ]]; then
+  DnsDatabase
 elif [[ $num -eq 4 ]]; then
   exit 0
 else
