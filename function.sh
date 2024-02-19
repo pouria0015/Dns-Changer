@@ -1,6 +1,7 @@
 #!/bin/bash
 
-menu(){
+menuLogo(){
+
 
 echo █████████████████████████████▀█████████████████████████████
 echo █─▄▄▄─█─█─██▀▄─██▄─▀█▄─▄█─▄▄▄▄█▄─▄▄─███▄─▄▄▀█▄─▀█▄─▄█─▄▄▄▄█
@@ -10,6 +11,20 @@ echo -e '\n'
 
 }
 
+menuOptions(){
+  echo 1: view my DNS
+  echo 2: change DNS
+  echo 3: DNS databse
+  echo -e "4: exit\n"
+}
+
+getMenuNum(){
+
+  local Num=$1
+  read -p "Enter the option: " Num
+  echo ${Num}
+
+}
 
 dns_changer() {
 sudo cp /etc/resolv.conf /etc/resolv.con.backup
@@ -37,5 +52,19 @@ fi
 else
   echo -e "\n Not valid Dns"
 fi
+
+}
+
+
+viewMyDns(){
+
+  echo -e "\nYour Dns:\n" | sudo cat /etc/resolv.conf
+
+}
+
+
+DnsDatabase(){
+
+  echo Dns Database
 
 }
