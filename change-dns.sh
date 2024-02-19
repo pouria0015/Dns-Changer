@@ -21,7 +21,7 @@ if [[ $num -eq 1 ]];then
 elif [[ $num -eq 2 ]]; then
   dns_changer
 elif [[ $num -eq 3 ]]; then
-  DnsDatabase
+  SelectDnsFromDatabase
 elif [[ $num -eq 4 ]]; then
   exit 0
 else
