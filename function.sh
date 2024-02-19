@@ -14,7 +14,7 @@ echo -e '\n'
 menuOptions(){
   echo 1: view my DNS
   echo 2: change DNS
-  echo 3: DNS databse
+  echo 3: select DNS from databse
   echo -e "4: exit\n"
 }
 
@@ -63,8 +63,8 @@ viewMyDns(){
 }
 
 
-DnsDatabase(){
+SelectDnsFromDatabase(){
 
-  echo Dns Database
+  echo -e "Dns Database" | cat ./database/DnsDatabase.txt
 
 }
