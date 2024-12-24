@@ -27,7 +27,8 @@ getMenuNum(){
 
 
 dns_changer() {
-  echo "" | sudo cp /etc/resolv.conf /etc/resolv.con.backup
+
+   sudo cp /etc/resolv.conf /etc/resolv.con.backup
 
   read -p "Enter DNS IP1: " dns1
   read -p "Enter DNS IP2: " dns2
@@ -56,8 +57,8 @@ viewMyDns(){
 
 
 SelectDnsFromDatabase(){
-  local dns_file="./database/DnsDatabase.txt"
-
+  local dns_file="./database/DnsDatabse.txt"
+  sudo cp /etc/resolv.conf /etc/resolv.con.backup
   if [[ ! -f "$dns_file" ]]; then
     echo "Error: DNS database file not found."
     return 1
@@ -90,12 +91,12 @@ SelectDnsFromDatabase(){
 resetDns(){
   local backup_file="/etc/resolv.con.backup"
   local output_file="/etc/resolv.conf"
-
   if [[ ! -f "$backup_file" ]]; then
     echo "Error: Backup file not found. Cannot reset DNS."
     return 1
   fi
 
   sudo cp "$backup_file" "$output_file"
+
   echo "DNS reset to the backup configuration."
 }
